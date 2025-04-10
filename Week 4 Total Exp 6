@@ -1,0 +1,74 @@
+a) Generate first N natural numbers
+
+def generate_natural_numbers(n):
+    for i in range(1, n + 1):
+        print(i, end=' ')
+
+# Example usage:
+n = int(input("Enter N: "))
+generate_natural_numbers(n)
+
+b) Check if a number is palindrome
+def is_palindrome(number):
+    return str(number) == str(number)[::-1]
+
+# Example usage:
+num = int(input("Enter a number: "))
+if is_palindrome(num):
+    print("Palindrome")
+else:
+    print("Not a palindrome")
+
+c) Print factorial of a number
+def factorial(n):
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+
+# Example usage:
+num = int(input("Enter a number: "))
+print("Factorial:", factorial(num))
+
+d) Print sum of N natural numbers
+def sum_natural_numbers(n):
+    return n * (n + 1) // 2
+
+# Example usage:
+n = int(input("Enter N: "))
+print("Sum of first", n, "natural numbers is:", sum_natural_numbers(n))
+
+
+e) Check if a number is Armstrong number
+
+def is_armstrong(number):
+    digits = [int(d) for d in str(number)]
+    power = len(digits)
+    return number == sum([d ** power for d in digits])
+
+# Example usage:
+num = int(input("Enter a number: "))
+if is_armstrong(num):
+    print("Armstrong number")
+else:
+    print("Not an Armstrong number")
+
+
+f) Generate prime numbers series up to N
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def generate_primes_up_to(n):
+    for i in range(2, n + 1):
+        if is_prime(i):
+            print(i, end=' ')
+
+# Example usage:
+n = int(input("Enter N: "))
+generate_primes_up_to(n)
